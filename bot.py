@@ -8,8 +8,8 @@ from telegram.ext import (
 logging.basicConfig(format="%(asctime)s - %(levelname)s - %(message)s", level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-TELEGRAM_TOKEN = "8601013378:AAHhpB5b5BfRcXoo2sOCWS9t8ZfJBxHPY6I"
-TRAINER_ID = 8172910932  # Впиши сюда свой ID после команды /myid
+TELEGRAM_TOKEN = os.environ.get("BOT_TOKEN")
+TRAINER_ID = int(os.environ.get("TRAINER_ID", "8172910932"))
 DATA_FILE = "events_data.json"
 
 ADD_EVENT_TITLE, ADD_EVENT_DATE, ADD_EVENT_TIME, ADD_EVENT_DESC, PICK_PARTICIPANT, PICK_EVENT = range(6)
